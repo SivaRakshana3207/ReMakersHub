@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReMakersHub - Product Page</title>
+  <link rel="stylesheet" href="sell.html">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #f4f7f5; color: #333; }
+
+    .navbar {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 8%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #27ae60;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  .nav-links li {
+    position: relative;
+  }
+
+
+    .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #27ae60;
+  }
+
+  /* Dropdown */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #fff;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+   .dropdown-menu li {
+    padding: 10px;
+  }
+
+  .dropdown-menu li a {
+    color: #333;
+    display: block;
+  }
+
+  .dropdown-menu li a:hover {
+    background: #f4f6f9;
+    border-radius: 6px;
+    color: #27ae60;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+    /* Container */
+    .container { max-width: 1100px; margin: 30px auto; padding: 20px; display: flex; gap: 40px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+    /* Left Image */
+    .product-image { flex: 1; }
+    .product-image img { width: 100%; border-radius: 12px; }
+
+    /* Right Details */
+    .product-details { flex: 1.2; display: flex; flex-direction: column; gap: 20px; }
+    .product-details h1 { font-size: 28px; color: #2e7d32; }
+    .price { font-size: 22px; color: #444; }
+    .price span { color: #2e7d32; font-weight: bold; }
+
+    /* Eco Impact */
+    .eco-impact { display: flex; gap: 20px; flex-wrap: wrap; }
+    .eco-box { background: #e8f5e9; padding: 10px 15px; border-radius: 8px; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+
+    /* Buttons */
+    .buttons { display: flex; gap: 15px; }
+    .btn {
+      padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer;
+      font-weight: bold; font-size: 15px; transition: 0.3s;
+    }
+    .cart { background: #2e7d32; color: white; }
+    .cart:hover { background: #1b5e20; }
+    .buy { background: #ff9800; color: white; }
+    .buy:hover { background: #ef6c00; }
+
+    /* Encouragement */
+    .encouragement {
+      margin-top: 15px; background: #fff8e1; padding: 15px;
+      border-radius: 8px; text-align: center; font-size: 15px;
+    }
+    .encouragement a {
+      display: inline-block; margin-top: 10px; padding: 10px 15px;
+      background: #2e7d32; color: white; border-radius: 6px;
+      text-decoration: none; font-weight: bold;
+    }
+    .encouragement a:hover { background: #1b5e20; }
+
+    /* Seller */
+    .seller {
+      margin-top: 20px; padding: 12px; background: #f1f8e9;
+      border-radius: 8px; font-size: 14px;
+    }
+    .seller span { font-weight: bold; }
+    .verified { color: green; font-size: 13px; margin-left: 8px; }
+
+    /* Related Products */
+    .related { max-width: 1200px; margin: 40px auto; padding: 20px; }
+    .related h2 { margin-bottom: 20px; color: #2e7d32; }
+    .products-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: white; padding: 15px; border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center;
+    }
+    .product-card img { width: 100%; border-radius: 8px; }
+    .product-card h3 { font-size: 16px; margin: 10px 0; color: #333; }
+    .product-card p { font-size: 14px; color: #2e7d32; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+<nav class="navbar">
+  <div class="logo">ReMakersHub</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#ab">About</a></li>
+
+    <!-- Sell dropdown -->
+    <li class="dropdown">
+      <a href="#">Sell ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="sell1.html" target="_blank">Sell Waste</a></li>
+        <li><a href="sell2.html" target="_blank">Sell Products</a></li>
+      </ul>
+    </li>
+
+    <!-- Products dropdown -->
+    <li class="dropdown">
+      <a href="#">Products ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="wproducts.html" target="_blank">Buy Waste Products</a></li>
+        <li><a href="products.html" target="_blank">Buy Handmade Products</a></li>
+      </ul>
+    </li>
+    <li><a href="cart.html" target="_blank">Cart 🛒</a></li>
+    <li><a href="profile.html" target="_blank">Profile 👤</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Product Container -->
+  <div class="container">
+    <div class="product-image">
+      <img src="https://brownliving.in/cdn/shop/files/coconut-shell-kids-serving-bowl-animal-design-monkey-350ml-set-of-1-thenga-sustainable-plates-bowls-brown-living-monkeybowl-968726.jpg?v=1723850977&width=600" alt="Coconut Shell Bowl">
+    </div>
+
+    <div class="product-details">
+      <h1>Coconut Shell Bowl 🥥</h1>
+      <div class="price">₹250 or <span>25  Eco-Coins</span></div>
+
+      <!-- Eco Impact -->
+      <div class="eco-impact">
+        <div class="eco-box">♻ 500g plastic saved</div>
+        <div class="eco-box">💨 300g CO₂ reduced</div>
+        <div class="eco-box">💧 2L water saved</div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button class="btn cart">Add to Cart 🛒</button>
+        <button class="btn buy">Buy Now ⚡</button>
+      </div>
+
+      <!-- Encouragement -->
+      <div class="encouragement">
+        👉 Not enough coins? Sell your waste to earn more 🪙!
+        <br>
+        <a href="sell.html" target="_blank">Sell Waste & Earn Coins</a>
+      </div>
+
+      <!-- Seller Info -->
+      <div class="seller">
+        Sold by: <span>🌿 Green Earth Recycling Store</span>
+        <span class="verified">✅ Verified Seller</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Products -->
+  <div class="related">
+    <h2>You may also like</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://wudbox.in/wp-content/uploads/2022/12/Bamboo-Toothbrush-C-Shaped-5-scaled.jpg" alt="Bamboo Brush">
+        <h3>Bamboo Toothbrush</h3>
+        <p>₹120 | 12 🪙</p>
+      </div>
+      <div class="product-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQkVUMEqHVOmPGjr1BzwnJY7CM9-dNaSPW8g&s" alt="Jute Bag">
+        <h3>Eco Jute Bag</h3>
+        <p>₹200 | 20 🪙</p>
+      </div>
+      <div class="product-card">
+        <img src="https://papercraftworld.com/cdn/shop/products/fox-3d-model-139343_500x.jpg?v=1681143647" alt="Steel Straw">
+        <h3>Paper craft</h3>
+        <p>₹150 | 15 🪙</p>
+      </div>
+      <div class="product-card">
+        <img src="https://www.jiomart.com/images/product/original/rvx5lrjjzp/sudnyata-bamboo-water-bottle-with-stainless-steel-lining-product-images-orvx5lrjjzp-p599915073-0-202303280743.jpg?im=Resize=(1000,1000)" alt="Bottle">
+        <h3>Reusable Bottle</h3>
+        <p>₹300 | 30 🪙</p>
+      </div>
+      <div class="product-card">
+        <img src="https://images-cdn.ubuy.co.in/680732b24a9c4b0f900b473c-eco-books-small-pocket-notebook-pack.jpg" alt="Notebook">
+        <h3>Eco Notebook</h3>
+        <p>₹100 | 10 🪙</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

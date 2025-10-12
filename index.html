@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReMakersHub</title>
+  <link rel="stylesheet" href="products.html">
+  <link rel="stylesheet" href="product1.html">
+  <link rel="stylesheet" href="sell1.html">
+  <link rel="stylesheet" href="sell2.html">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .navbar {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 8%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #27ae60;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  .nav-links li {
+    position: relative;
+  }
+
+
+    .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #27ae60;
+  }
+
+  /* Dropdown */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #fff;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+   .dropdown-menu li {
+    padding: 10px;
+  }
+
+  .dropdown-menu li a {
+    color: #333;
+    display: block;
+  }
+
+  .dropdown-menu li a:hover {
+    background: #f4f6f9;
+    border-radius: 6px;
+    color: #27ae60;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+    /* Carousel */
+     /* Fullscreen hero carousel */
+    #heroCarousel .carousel-item {
+      height: 100vh;                 /* make slides full screen */
+      position: relative;
+    }
+    #heroCarousel .carousel-item img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;             /* keep image covering the slide */
+      filter: brightness(0.55);      /* darken a bit so text is readable */
+    }
+    /* Centered caption */
+    #heroCarousel .carousel-caption {
+      bottom: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      text-shadow: 0 4px 18px rgba(0,0,0,.55);
+    }
+    #heroCarousel .carousel-caption h1 {
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: .5px;
+    }
+    #heroCarousel .carousel-caption p {
+      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      margin-bottom: 1rem;
+    }
+    /* Make indicators a bit larger for clarity */
+    #heroCarousel .carousel-indicators [data-bs-target]{
+      width: 12px; height: 12px; border-radius: 50%;
+    }
+    /* About Section */
+    .about {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 60px 50px;
+      background: #ffffff;
+    }
+
+    .about-text {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .btn-dark {
+      padding: 10px 25px;
+      background: #2c3e50;
+      color: #fff;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-dark:hover {
+      background: #1a252f;
+    }
+
+    .about img {
+      flex: 1;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Sell Section */
+    .sell {
+      padding: 60px 50px;
+      background: #f1f8f6;
+      text-align: center;
+    }
+
+    .sell h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #16a085;
+    }
+
+    .sell-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .sell-form input,
+    .sell-form button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .sell-form input[type="file"] {
+      border: none;
+    }
+
+    .sell-form button {
+      background: #16a085;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .sell-form button:hover {
+      background: #138d75;
+    }
+
+    /* Products Section */
+    .products {
+      padding: 60px 50px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .products-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .products-header h2{
+      font-size: 24px;
+    }
+
+    .view-all-btn{
+      text-decoration: none;
+      background: #007bff;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .view-all-btn:hover{
+      background: #0056b3;
+    }
+
+    .products h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #f8f9fa;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .product-card button {
+      background: #f1c40f;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .product-card button:hover {
+      background: #d4ac0d;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+<nav class="navbar">
+  <div class="logo">ReMakersHub</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#ab">About</a></li>
+
+    <!-- Sell dropdown -->
+    <li class="dropdown">
+      <a href="#">Sell ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="sell1.html" target="_blank">Sell Waste</a></li>
+        <li><a href="sell2.html" target="_blank">Sell Products</a></li>
+      </ul>
+    </li>
+
+    <!-- Products dropdown -->
+    <li class="dropdown">
+      <a href="#">Products ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="wproducts.html" target="_blank">Buy Waste Products</a></li>
+        <li><a href="products.html" target="_blank">Buy Handmade Products</a></li>
+      </ul>
+    </li>
+    <li><a href="cart.html" target="_blank">Cart 🛒</a></li>
+    <li><a href="profile.html" target="_blank">Profile 👤</a></li>
+  </ul>
+</nav>
+
+
+  <!-- HERO CAROUSEL -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+    <!-- indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active" data-bs-interval="4500">
+        <img src="https://thumbs.dreamstime.com/b/person-arranges-kraft-soap-boxes-table-shredded-filler-handmade-product-tags-handmade-movement-analog-creativity-diy-385530409.jpg" alt="Eco products" />
+        <div class="carousel-caption">
+          <h1>Welcome to ReMakersHub</h1>
+          <p>Buy, Sell & Resell eco-friendly products in one trusted marketplace.</p>
+          <a href="#start" class="btn btn-success btn-lg rounded-pill px-4">Explore Now</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" data-bs-interval="4500">
+        <img src="https://www.discovabali.com/wp-content/uploads/2023/02/ubud-market-bali-golden-tour.jpg" alt="Artisan making craft" />
+        <div class="carousel-caption">
+          <h1>Empowering Local Artisans</h1>
+          <p>Only verified buyers can resell — creating a safe circular economy.</p>
+          <a href="#about" class="btn btn-lg rounded-pill px-4" style="background-color: brown; color: whitesmoke;">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item" data-bs-interval="4500">
+        <img src="https://t4.ftcdn.net/jpg/13/48/69/63/360_F_1348696320_DNTLIvmaQa9TNQK0PkwkXW3MeOP4YrsI.jpg" alt="Marketplace" />
+        <div class="carousel-caption">
+          <h1>Smart · Secure · Sustainable</h1>
+          <p>Turn waste into wealth and keep value within the community.</p>
+          <a href="#join" class="btn text-dark btn-lg rounded-pill px-4" style="background-color: pink;">Join Today</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- About Section -->
+  <section class="about" id="ab">
+    <div class="about-text">
+      <h2>About ReMakersHub</h2>
+      <p>ReMakersHub connects households, artisans, and small businesses by transforming waste into raw materials for eco-friendly products. Our unique platform ensures only verified buyers can resell within the system, creating a trusted and sustainable marketplace.</p>
+      <a href="#" class="btn-dark">Learn More</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="About Us">
+  </section>
+
+  <!-- Sell Section -->
+  <section class="sell" id="se">
+    <h2>Sell Your Waste Products</h2>
+    <form class="sell-form">
+      <input type="file" accept="image/*">
+      <input type="text" placeholder="Product Name">
+      <input type="number" placeholder="Price (in Coins)">
+      <input type="text" placeholder="Short Description">
+      <button type="submit">Sell</button>
+    </form>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products">
+    <div class="products-header">
+      <h2>Available Products</h2>
+      <a href="products.html" class="view-all-btn" target="_blank">View All</a>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://brownliving.in/cdn/shop/files/coconut-shell-kids-serving-bowl-animal-design-dog-350ml-set-of-1-thenga-sustainable-plates-bowls-brown-living-dogbowl-810686.jpg?v=1723850976&width=1080" alt="Coconut Shell Bowl">
+        <h3>Coconut Shell Bowl</h3>
+        <p>Eco-friendly handmade bowl.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://www.thesparklestory.in/cdn/shop/files/PersonalizedCanvasToteBag-CODNotApplicable_800x.jpg?v=1718618153" alt="Cloth Bag">
+        <h3>Cloth Bag</h3>
+        <p>Reusable shopping bag.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://www.purehomeandliving.com/cdn/shop/products/8907895081140_1.jpg?v=1674553246&width=1090" alt="Glass Vase">
+        <h3>Glass Vase</h3>
+        <p>Handmade recycled glass vase.</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://papercraftworld.com/cdn/shop/products/fox-3d-model-139343_500x.jpg?v=1681143647" alt="Paper Craft">
+        <h3>Paper Craft</h3>
+        <p>Decorative recycled paper item.</p>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ReMakersHub. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
