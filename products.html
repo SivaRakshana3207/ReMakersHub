@@ -61,6 +61,14 @@
       color: #27ae60;
     }
 
+    .navbar-brand {
+  color: #27ae60 !important;
+  font-size: 26px;
+}
+.nav-link:hover {
+  color: #27ae60 !important;
+}
+    
     /* ✅ Dropdown */
     .dropdown-menu {
       display: none;
@@ -232,30 +240,49 @@
 <body>
 
   <!-- ✅ NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">ReMakersHub</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#ab">About</a></li>
-      <li class="dropdown">
-        <a href="#">Sell ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="sell1.html" target="_blank">Sell Waste</a></li>
-          <li><a href="sell2.html" target="_blank">Sell Products</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#">Products ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="wproducts.html" target="_blank">Buy Waste Products</a></li>
-          <li><a href="products.html" target="_blank">Buy Handmade Products</a></li>
-        </ul>
-      </li>
-      <li><a href="cart.html" target="_blank">Cart 🛒</a></li>
-      <li><a href="profile.html" target="_blank">Profile 👤</a></li>
-    </ul>
-  </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-success" href="index.html">ReMakersHub</a>
 
+    <!-- Hamburger button (visible on mobile) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ab">About</a></li>
+
+        <!-- Sell Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="sellDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sell
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="sellDropdown">
+            <li><a class="dropdown-item" href="sell1.html" target="_blank">Sell Waste</a></li>
+            <li><a class="dropdown-item" href="sell2.html" target="_blank">Sell Products</a></li>
+          </ul>
+        </li>
+
+        <!-- Products Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productDropdown">
+            <li><a class="dropdown-item" href="wproducts.html" target="_blank">Buy Waste Products</a></li>
+            <li><a class="dropdown-item" href="products.html" target="_blank">Buy Handmade Products</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="cart.html" target="_blank">Cart 🛒</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html" target="_blank">Profile 👤</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
   <!-- ✅ Products Section -->
   <section class="products">
     <div class="products-header">
@@ -300,6 +327,7 @@
   <footer>
     <p>&copy; 2025 ReMakersHub. All Rights Reserved.</p>
   </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
