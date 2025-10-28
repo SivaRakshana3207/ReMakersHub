@@ -12,61 +12,26 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* Navbar same as index */
-    .navbar {
+    /* ✅ Navbar */
+    .navbar-custom {
       background: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 8%;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
-
-    .navbar .logo {
+    .navbar-brand {
       font-size: 26px;
       font-weight: bold;
-      color: #27ae60;
+      color: #27ae60 !important;
     }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
+    .nav-link {
+      color: #333 !important;
       font-weight: 500;
       transition: 0.3s;
     }
-    .nav-links a:hover { color: #27ae60; }
-
-    /* Dropdown */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      background: #fff;
-      list-style: none;
-      top: 100%;
-      left: 0;
-      min-width: 180px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .nav-link:hover {
+      color: #27ae60 !important;
     }
-    .dropdown-menu li { padding: 10px; }
-    .dropdown-menu li a { color: #333; display: block; }
-    .dropdown-menu li a:hover {
-      background: #f4f6f9;
-      border-radius: 6px;
-      color: #27ae60;
-    }
-    .dropdown:hover .dropdown-menu { display: block; }
 
-    /* Cart Table */
+    /* ✅ Cart Container */
     .cart-container {
       max-width: 1000px;
       margin: 40px auto;
@@ -75,16 +40,19 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
+
     table th {
       background: #27ae60;
       color: white;
     }
+
     .cart-summary {
       text-align: right;
       margin-top: 20px;
       font-size: 20px;
       font-weight: bold;
     }
+
     .btn-checkout {
       display: block;
       width: 100%;
@@ -99,78 +67,121 @@
       text-align: center;
       transition: 0.3s;
     }
-    .btn-checkout:hover { background: #219150; }
+
+    .btn-checkout:hover {
+      background: #219150;
+    }
+
+    /* ✅ Responsive Adjustments */
+    @media (max-width: 768px) {
+      .cart-container {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      table {
+        font-size: 14px;
+      }
+
+      .cart-summary {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .btn-checkout {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ✅ Navbar -->
-  <nav class="navbar">
-    <div class="logo">ReMakersHub</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#ab">About</a></li>
+  <!-- ✅ Responsive Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">ReMakersHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <!-- Sell dropdown -->
-      <li class="dropdown">
-        <a href="#">Sell ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="sell1.html">Sell Waste</a></li>
-          <li><a href="sell2.html">Sell Products</a></li>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#ab">About</a></li>
+
+          <!-- Sell Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="sellDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sell</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="sell1.html">Sell Waste</a></li>
+              <li><a class="dropdown-item" href="sell2.html">Sell Products</a></li>
+            </ul>
+          </li>
+
+          <!-- Products Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="wproducts.html">Buy Waste Products</a></li>
+              <li><a class="dropdown-item" href="products.html">Buy Handmade Products</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart 🛒</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile 👤</a></li>
         </ul>
-      </li>
-
-      <!-- Products dropdown -->
-      <li class="dropdown">
-        <a href="#">Products ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="wproducts.html">Buy Waste Products</a></li>
-          <li><a href="products.html">Buy Handmade Products</a></li>
-        </ul>
-      </li>
-
-      <li><a href="cart.html">Cart 🛒</a></li>
-      <li><a href="profile.html">Profile 👤</a></li>
-    </ul>
+      </div>
+    </div>
   </nav>
 
   <!-- ✅ Cart Section -->
   <div class="cart-container">
     <h2 class="mb-4">🛒 My Shopping Cart</h2>
-    <table class="table table-bordered text-center align-middle">
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Category</th>
-          <th>Quantity</th>
-          <th>Price (₹)</th>
-          <th>Total (₹)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Plastic Waste</td>
-          <td>Waste</td>
-          <td>10 Kg</td>
-          <td>₹100</td>
-          <td>₹100</td>
-        </tr>
-        <tr>
-          <td>Old Newspaper</td>
-          <td>Waste</td>
-          <td>5 Kg</td>
-          <td>₹50</td>
-          <td>₹50</td>
-        </tr>
-        <tr>
-          <td>Handmade Basket</td>
-          <td>Handmade</td>
-          <td>1</td>
-          <td>₹200</td>
-          <td>₹200</td>
-        </tr>
-      </tbody>
-    </table>
+
+    <div class="table-responsive">
+      <table class="table table-bordered text-center align-middle">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price (₹)</th>
+            <th>Total (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plastic Waste</td>
+            <td>Waste</td>
+            <td>10 Kg</td>
+            <td>₹100</td>
+            <td>₹100</td>
+          </tr>
+          <tr>
+            <td>Old Newspaper</td>
+            <td>Waste</td>
+            <td>5 Kg</td>
+            <td>₹50</td>
+            <td>₹50</td>
+          </tr>
+          <tr>
+            <td>Handmade Basket</td>
+            <td>Handmade</td>
+            <td>1</td>
+            <td>₹200</td>
+            <td>₹200</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="cart-summary">
       Total Amount: ₹350
@@ -179,10 +190,11 @@
     <a href="checkout.html" class="btn-checkout">Proceed to Checkout</a>
   </div>
 
-  <!-- Footer -->
+  <!-- ✅ Footer -->
   <footer class="text-center p-3 bg-dark text-light mt-5">
     &copy; 2025 ReMakersHub. All Rights Reserved.
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
