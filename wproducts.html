@@ -19,114 +19,61 @@
       color: #333;
     }
 
-    /* Navbar */
+    /* ✅ Navbar */
     .navbar {
       background: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 8%;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 14px 8%;
     }
 
-    .navbar .logo {
-      font-size: 26px;
+    .navbar-brand {
+      color: #27ae60 !important;
       font-weight: bold;
-      color: #27ae60;
+      font-size: 26px;
     }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-links li {
-      position: relative;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
+    .navbar-nav .nav-link {
+      color: #333 !important;
       font-weight: 500;
       transition: 0.3s;
     }
 
-    .nav-links a:hover {
-      color: #27ae60;
+    .navbar-nav .nav-link:hover {
+      color: #27ae60 !important;
     }
 
-    /* Dropdown */
     .dropdown-menu {
-      display: none;
-      position: absolute;
-      background: #fff;
-      list-style: none;
-      top: 100%;
-      left: 0;
-      min-width: 180px;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .dropdown-menu li {
-      padding: 10px;
-    }
-
-    .dropdown-menu li a {
-      color: #333;
-      display: block;
-    }
-
-    .dropdown-menu li a:hover {
+    .dropdown-menu a:hover {
       background: #f4f6f9;
+      color: #27ae60 !important;
       border-radius: 6px;
-      color: #27ae60;
     }
 
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
-    /* Products Section */
+    /* ✅ Products Section */
     .products {
-      padding: 60px 50px;
+      padding: 60px 40px;
       background: #ffffff;
     }
 
     .products-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      margin-top: -5px;
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     .products-header h2 {
-      font-size: 24px;
-    }
-
-    .view-all-btn {
-      text-decoration: none;
-      background: #007bff;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 5px;
-      font-size: 14px;
-      transition: 0.3s ease;
-    }
-
-    .view-all-btn:hover {
-      background: #0056b3;
+      font-size: 26px;
+      color: #222;
+      font-weight: 600;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
     }
 
     .product-card {
@@ -153,11 +100,12 @@
     .product-card h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
+      color: #333;
     }
 
     .product-card p {
       font-size: 0.95rem;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .product-card button {
@@ -168,61 +116,108 @@
       cursor: pointer;
       font-weight: bold;
       transition: 0.3s;
+      color: white;
     }
 
     .product-card button:hover {
       background: #d68910;
     }
 
-    /* Footer */
+    /* ✅ Footer */
     footer {
       background: #2c3e50;
       color: #fff;
       text-align: center;
       padding: 15px 0;
       margin-top: 40px;
+      font-size: 0.95rem;
+    }
+
+    /* ✅ Responsive Tweaks */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 10px 5%;
+      }
+
+      .products {
+        padding: 40px 20px;
+      }
+
+      .products-header h2 {
+        font-size: 22px;
+      }
+
+      .product-card img {
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .products-header h2 {
+        font-size: 20px;
+      }
+
+      .product-card h3 {
+        font-size: 1rem;
+      }
+
+      .product-card p {
+        font-size: 0.9rem;
+      }
+
+      footer {
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ✅ NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">ReMakersHub</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#ab">About</a></li>
+  <!-- ✅ Navbar (Responsive using Bootstrap) -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ReMakersHub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ab">About</a></li>
 
-      <!-- Sell dropdown -->
-      <li class="dropdown">
-        <a href="#">Sell ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="sell1.html" target="_blank">Sell Waste</a></li>
-          <li><a href="sell2.html" target="_blank">Sell Products</a></li>
-        </ul>
-      </li>
+          <!-- Sell Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sell</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="sell1.html" target="_blank">Sell Waste</a></li>
+              <li><a class="dropdown-item" href="sell2.html" target="_blank">Sell Products</a></li>
+            </ul>
+          </li>
 
-      <!-- Products dropdown -->
-      <li class="dropdown">
-        <a href="#">Products ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="wproducts.html" target="_blank">Buy Waste Products</a></li>
-          <li><a href="products.html" target="_blank">Buy Handmade Products</a></li>
+          <!-- Products Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="wproducts.html" target="_blank">Buy Waste Products</a></li>
+              <li><a class="dropdown-item" href="products.html" target="_blank">Buy Handmade Products</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="cart.html" target="_blank">Cart 🛒</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html" target="_blank">Profile 👤</a></li>
         </ul>
-      </li>
-      <li><a href="cart.html" target="_blank">Cart 🛒</a></li>
-      <li><a href="profile.html" target="_blank">Profile 👤</a></li>
-    </ul>
+      </div>
+    </div>
   </nav>
 
-  <!-- Waste Products Section -->
+  <!-- ✅ Waste Products Section -->
   <section class="products">
     <div class="products-header">
       <h2>Available Waste Materials</h2>
     </div>
     <div class="product-grid">
 
-      <!-- Waste Items -->
+      <!-- Example product cards -->
       <div class="product-card">
         <img src="https://content.jdmagicbox.com/comp/thoothukudi/p3/9999px461.x461.200117184234.a7p3/catalogue/roja-polymers-thoothukudi-00lc5lgz6c-250.jpg" alt="Plastic Bottles">
         <h3>Plastic Bottles</h3>
@@ -263,67 +258,14 @@
         <button>Buy Now</button>
       </div>
 
-      <div class="product-card">
-        <img src="https://static.independent.co.uk/2021/02/16/13/newFile.jpg" alt="Mixed Plastics">
-        <h3>Mixed Plastics</h3>
-        <p>Available: 10 kg</p>
-        <p><strong>₹88</strong></p>
-        <button>Buy Now</button>
-      </div>
-
-      <div class="product-card">
-        <img src="https://i0.wp.com/www.bioenergyconsult.com/wp-content/uploads/2014/11/coconut-shell-biomass.jpg?w=720&ssl=1" alt="Glass Bottles">
-        <h3>Coconut shells</h3>
-        <p>Available: 14 kg</p>
-        <p><strong>₹45</strong></p>
-        <button>Buy Now</button>
-      </div>
-
-      <div class="product-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBlXdNDthf3T5h4TUddYL9Dsua_rlOTxeIWg&s" alt="Waste Magazines">
-        <h3>Magazines</h3>
-        <p>Available: 90 kg</p>
-        <p><strong>₹553</strong></p>
-        <button>Buy Now</button>
-      </div>
-      <div class="product-card">
-        <img src="https://content.jdmagicbox.com/comp/thoothukudi/p3/9999px461.x461.200117184234.a7p3/catalogue/roja-polymers-thoothukudi-00lc5lgz6c-250.jpg" alt="Plastic Bottles">
-        <h3>Plastic Bottles</h3>
-        <p>Available: 20 kg</p>
-        <p><strong>₹50</strong></p>
-        <button>Buy Now</button>
-      </div>
-      <div class="product-card">
-        <img src="https://5.imimg.com/data5/SELLER/Default/2020/11/TZ/QR/YC/85792480/article-0-0d1ae85d00000578-941-1024x615-large-jpg-500x500.jpg" alt="Old Newspapers">
-        <h3>Old Newspapers</h3>
-        <p>Available: 15 kg</p>
-        <p><strong>₹35</strong></p>
-        <button>Buy Now</button>
-      </div>
-      <div class="product-card">
-        <img src="https://images-cdn.ubuy.co.in/6429123ec61cdb566f1604a3-mt-products-sturdy-kraft-corrugated.jpg" alt="Cardboard Boxes">
-        <h3>Cardboard Boxes</h3>
-        <p>Available: 18 kg</p>
-        <p><strong>₹40</strong></p>
-        <button>Buy Now</button>
-      </div>
-
-      <div class="product-card">
-        <img src="https://www.niir.org/blog/wp-content/uploads/2022/08/ALU-CANS-cropped-300x239.jpg" alt="Aluminium Cans">
-        <h3>Aluminium Cans</h3>
-        <p>Available: 8 kg</p>
-        <p><strong>₹39</strong></p>
-        <button>Buy Now</button>
-      </div>
-
-
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ✅ Footer -->
   <footer>
     <p>&copy; 2025 ReMakersHub. All Rights Reserved.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
