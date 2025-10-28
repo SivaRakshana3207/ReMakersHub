@@ -5,23 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sell Handmade Products - ReMakersHub</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8fafc; }
-    .container { width: 90%; max-width: 1100px; margin: 30px auto; display: flex; gap: 25px; }
-    .card { background: white; border-radius: 10px; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); flex: 1; }
-
-    h2 { color: #27ae60; margin-bottom: 15px; }
-    label { font-weight: bold; display: block; margin: 8px 0 4px; }
-    input, textarea, select {
-      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 12px;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
     }
-    button { background: #27ae60; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; width: 100%; }
-    button:hover { background: #219150; }
 
-    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-    th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
-    th { background: #27ae60; color: white; }
-    td.sold { color: green; font-weight: bold; }
-    td.notsold { color: red; font-weight: bold; }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto;
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap; /* allows wrapping on smaller screens */
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      flex: 1;
+      min-width: 300px; /* ensures cards shrink neatly */
+    }
+
+    h2 {
+      color: #27ae60;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 8px 0 4px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #27ae60;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #219150;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background: #27ae60;
+      color: white;
+    }
+
+    td.sold {
+      color: green;
+      font-weight: bold;
+    }
+
+    td.notsold {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* ✅ Responsive Styling */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      table, th, td {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.2rem;
+      }
+      button {
+        padding: 10px;
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -51,7 +148,6 @@
         <button type="submit">Submit & List Product</button>
       </form>
     </div>
-    
 
     <!-- Sell History -->
     <div class="card">
