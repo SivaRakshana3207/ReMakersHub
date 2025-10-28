@@ -4,181 +4,291 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sell & Buy Waste - ReMakersHub</title>
+
   <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:"Segoe UI", Arial, sans-serif;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
 
     body {
-      background:#f4f6f9;
-      color:#333;
-      padding:20px;
-      line-height:1.6;
+      background: #f4f6f9;
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
     }
 
     h1, h2 {
-      text-align:center;
-      margin:20px 0;
-      color:#2c3e50;
+      text-align: center;
+      margin: 20px 0;
+      color: #2c3e50;
     }
 
-    /* === GRID LAYOUT FOR LANDSCAPE === */
+    /* === GRID LAYOUT === */
     .container {
-      display:grid;
+      display: grid;
       grid-template-columns: 1fr 1fr;
-      gap:30px;
-      max-width:1400px;
-      margin:auto;
+      gap: 30px;
+      max-width: 1400px;
+      margin: auto;
     }
-    @media(max-width:900px){
+
+    @media (max-width: 992px) {
       .container {
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
       }
     }
 
     /* === SELL FORM === */
     .sell-form {
-      background:#fff;
-      padding:25px;
-      border-radius:16px;
-      box-shadow:0 6px 12px rgba(0,0,0,0.08);
-      transition:0.3s;
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
     }
-    .sell-form:hover {transform:translateY(-3px);}
+
+    .sell-form:hover {
+      transform: translateY(-3px);
+    }
+
     .sell-form label {
-      font-weight:600;
-      display:block;
-      margin:12px 0 6px;
+      font-weight: 600;
+      display: block;
+      margin: 12px 0 6px;
     }
-    .sell-form input, .sell-form textarea, .sell-form select {
-      width:100%;
-      padding:12px;
-      border:1px solid #ddd;
-      border-radius:10px;
-      font-size:15px;
-      margin-bottom:10px;
-      transition:0.3s;
+
+    .sell-form input,
+    .sell-form textarea,
+    .sell-form select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 15px;
+      margin-bottom: 10px;
+      transition: 0.3s;
     }
-    .sell-form input:focus, .sell-form textarea:focus, .sell-form select:focus {
-      border-color:#27ae60;
-      outline:none;
-      box-shadow:0 0 5px rgba(39,174,96,0.4);
+
+    .sell-form input:focus,
+    .sell-form textarea:focus,
+    .sell-form select:focus {
+      border-color: #27ae60;
+      outline: none;
+      box-shadow: 0 0 5px rgba(39, 174, 96, 0.4);
     }
+
     .sell-form button {
-      background:#27ae60;
-      color:#fff;
-      border:none;
-      padding:14px;
-      border-radius:10px;
-      width:100%;
-      font-size:16px;
-      font-weight:bold;
-      cursor:pointer;
-      transition:0.3s;
+      background: #27ae60;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
     }
-    .sell-form button:hover {background:#219150;}
+
+    .sell-form button:hover {
+      background: #219150;
+    }
 
     /* === HISTORY TABLE === */
     .history {
-      background:#fff;
-      padding:20px;
-      border-radius:16px;
-      box-shadow:0 6px 12px rgba(0,0,0,0.08);
-      overflow-x:auto;
-    }
-    table {
-      width:100%;
-      border-collapse:collapse;
-      margin-top:10px;
-    }
-    th, td {
-      padding:14px;
-      text-align:center;
-      border-bottom:1px solid #f0f0f0;
-    }
-    th {
-      background:#27ae60;
-      color:#fff;
-      font-size:15px;
-    }
-    td {font-size:14px;}
-    tr:last-child td {border-bottom:none;}
-    tr:hover {background:#f9f9f9;}
-    .status-sold, .status-unsold {
-      padding:6px 12px;
-      border-radius:20px;
-      font-weight:bold;
-    }
-    .status-sold {
-      background:#eafaf1;
-      color:#27ae60;
-    }
-    .status-unsold {
-      background:#fdecea;
-      color:#e74c3c;
+      background: #fff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      overflow-x: auto;
     }
 
-    /* === BUY WASTE SECTION === */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      min-width: 600px;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    th {
+      background: #27ae60;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    td {
+      font-size: 14px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover {
+      background: #f9f9f9;
+    }
+
+    .status-sold,
+    .status-unsold {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .status-sold {
+      background: #eafaf1;
+      color: #27ae60;
+    }
+
+    .status-unsold {
+      background: #fdecea;
+      color: #e74c3c;
+    }
+
+    /* === BUY SECTION === */
     .buy-section {
-      margin:50px auto;
-      max-width:1300px;
+      margin: 50px auto;
+      max-width: 1300px;
     }
+
     .buy-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
+
     .waste-card {
-      background:#fff;
-      border-radius:14px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      overflow:hidden;
-      transition:0.3s;
-      display:flex;
-      flex-direction:column;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
     }
-    .waste-card:hover {transform:translateY(-6px);}
+
+    .waste-card:hover {
+      transform: translateY(-6px);
+    }
+
     .waste-card img {
-      width:100%;
-      height:200px;
-      object-fit:cover;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
+
     .waste-card .info {
-      padding:16px;
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
+
     .waste-card h3 {
-      font-size:18px;
-      margin-bottom:6px;
-      color:#2c3e50;
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: #2c3e50;
     }
+
     .waste-card p {
-      font-size:14px;
-      margin-bottom:6px;
-      color:#666;
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #666;
     }
+
     .waste-card .price {
-      font-weight:bold;
-      color:#27ae60;
-      margin:8px 0;
-      font-size:16px;
+      font-weight: bold;
+      color: #27ae60;
+      margin: 8px 0;
+      font-size: 16px;
     }
+
     .waste-card button {
-      background:#f39c12;
-      color:#fff;
-      border:none;
-      padding:12px;
-      border-radius:10px;
-      cursor:pointer;
-      font-weight:bold;
-      transition:0.3s;
+      background: #f39c12;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
     }
-    .waste-card button:hover {background:#d68910;}
+
+    .waste-card button:hover {
+      background: #d68910;
+    }
+
+    /* === RESPONSIVE ADJUSTMENTS === */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .sell-form,
+      .history {
+        padding: 18px;
+      }
+
+      table th,
+      table td {
+        font-size: 13px;
+        padding: 10px;
+      }
+
+      .waste-card img {
+        height: 180px;
+      }
+
+      .waste-card h3 {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 22px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .sell-form button {
+        font-size: 15px;
+        padding: 12px;
+      }
+
+      .waste-card img {
+        height: 160px;
+      }
+
+      .buy-section {
+        margin: 30px auto;
+      }
+    }
   </style>
 </head>
-<body>
 
+<body>
   <h1>♻ ReMakersHub - Waste Marketplace</h1>
 
   <!-- 2 Column Grid -->
@@ -225,73 +335,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Plastic Bottles</td>
-            <td>10 kg</td>
-            <td>Plastic</td>
-            <td>100</td>
-            <td><span class="status-sold">Sold</span></td>
-          </tr>
-          <tr>
-            <td>Metal Scrap</td>
-            <td>8 kg</td>
-            <td>Metal</td>
-            <td>120</td>
-            <td><span class="status-sold">Sold</span></td>
-          </tr>
-          <tr>
-            <td>Cardboard Boxes</td>
-            <td>12 kg</td>
-            <td>Paper</td>
-            <td>120</td>
-            <td><span class="status-sold">Sold</span></td>
-          </tr>
-          <tr>
-            <td>Mixed Plastics</td>
-            <td>7 kg</td>
-            <td>Plastic</td>
-            <td>70</td>
-            <td><span class="status-sold">Sold</span></td>
-          </tr>
-          <tr>
-            <td>Aluminium Cans</td>
-            <td>4 kg</td>
-            <td>Metal</td>
-            <td>80</td>
-            <td><span class="status-sold">Sold</span></td>
-          </tr>
-          <tr>
-            <td>Magazines</td>
-            <td>9 kg</td>
-            <td>Paper</td>
-            <td>90</td>
-            <td><span class="status-sold">Sold</span></td>
-          </tr>
-          <tr>
-            <td>Old Newspapers</td>
-            <td>5 kg</td>
-            <td>Paper</td>
-            <td>50</td>
-            <td><span class="status-unsold">Not Sold</span></td>
-          </tr>
-          <tr>
-            <td>Broken Glass Jars</td>
-            <td>6 kg</td>
-            <td>Other</td>
-            <td>60</td>
-            <td><span class="status-unsold">Not Sold</span></td>
-          </tr>
-          <tr>
-            <td>Coconut Shells</td>
-            <td>9 kg</td>
-            <td>Other</td>
-            <td>90</td>
-            <td><span class="status-unsold">Not Sold</span></td>
-          </tr>
+          <tr><td>Plastic Bottles</td><td>10 kg</td><td>Plastic</td><td>100</td><td><span class="status-sold">Sold</span></td></tr>
+          <tr><td>Metal Scrap</td><td>8 kg</td><td>Metal</td><td>120</td><td><span class="status-sold">Sold</span></td></tr>
+          <tr><td>Old Newspapers</td><td>5 kg</td><td>Paper</td><td>50</td><td><span class="status-unsold">Not Sold</span></td></tr>
         </tbody>
       </table>
     </div>
-
   </div>
 
   <!-- Buy Waste Section -->
@@ -329,6 +378,5 @@
       </div>
     </div>
   </div>
-
 </body>
 </html>
