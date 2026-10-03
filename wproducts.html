@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waste Products - ReMakersHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 8%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #27ae60;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #27ae60;
+    }
+
+    /* Dropdown */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: #fff;
+      list-style: none;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .dropdown-menu li {
+      padding: 10px;
+    }
+
+    .dropdown-menu li a {
+      color: #333;
+      display: block;
+    }
+
+    .dropdown-menu li a:hover {
+      background: #f4f6f9;
+      border-radius: 6px;
+      color: #27ae60;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* Products Section */
+    .products {
+      padding: 60px 50px;
+      background: #ffffff;
+    }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      margin-top: -5px;
+    }
+
+    .products-header h2 {
+      font-size: 24px;
+    }
+
+    .view-all-btn {
+      text-decoration: none;
+      background: #007bff;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .view-all-btn:hover {
+      background: #0056b3;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #f8f9fa;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .product-card button {
+      background: #f39c12;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .product-card button:hover {
+      background: #d68910;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">ReMakersHub</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#ab">About</a></li>
+
+      <!-- Sell dropdown -->
+      <li class="dropdown">
+        <a href="#">Sell ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="sell1.html" target="_blank">Sell Waste</a></li>
+          <li><a href="sell2.html" target="_blank">Sell Products</a></li>
+        </ul>
+      </li>
+
+      <!-- Products dropdown -->
+      <li class="dropdown">
+        <a href="#">Products ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="wproducts.html" target="_blank">Buy Waste Products</a></li>
+          <li><a href="products.html" target="_blank">Buy Handmade Products</a></li>
+        </ul>
+      </li>
+      <li><a href="cart.html" target="_blank">Cart 🛒</a></li>
+      <li><a href="profile.html" target="_blank">Profile 👤</a></li>
+    </ul>
+  </nav>
+
+  <!-- Waste Products Section -->
+  <section class="products">
+    <div class="products-header">
+      <h2>Available Waste Materials</h2>
+    </div>
+    <div class="product-grid">
+
+      <!-- Waste Items -->
+      <div class="product-card">
+        <img src="https://content.jdmagicbox.com/comp/thoothukudi/p3/9999px461.x461.200117184234.a7p3/catalogue/roja-polymers-thoothukudi-00lc5lgz6c-250.jpg" alt="Plastic Bottles">
+        <h3>Plastic Bottles</h3>
+        <p>Available: 20 kg</p>
+        <p><strong>₹50</strong></p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2020/11/TZ/QR/YC/85792480/article-0-0d1ae85d00000578-941-1024x615-large-jpg-500x500.jpg" alt="Old Newspapers">
+        <h3>Old Newspapers</h3>
+        <p>Available: 15 kg</p>
+        <p><strong>₹35</strong></p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/12/369226413/KD/IA/GM/33734417/coconut-shell.jpeg" alt="Coconut Shells">
+        <h3>Coconut Shells</h3>
+        <p>Available: 12 kg</p>
+        <p><strong>₹80</strong></p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images-cdn.ubuy.co.in/6429123ec61cdb566f1604a3-mt-products-sturdy-kraft-corrugated.jpg" alt="Cardboard Boxes">
+        <h3>Cardboard Boxes</h3>
+        <p>Available: 18 kg</p>
+        <p><strong>₹40</strong></p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://www.niir.org/blog/wp-content/uploads/2022/08/ALU-CANS-cropped-300x239.jpg" alt="Aluminium Cans">
+        <h3>Aluminium Cans</h3>
+        <p>Available: 8 kg</p>
+        <p><strong>₹39</strong></p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://static.independent.co.uk/2021/02/16/13/newFile.jpg" alt="Mixed Plastics">
+        <h3>Mixed Plastics</h3>
+        <p>Available: 10 kg</p>
+        <p><strong>₹88</strong></p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://i0.wp.com/www.bioenergyconsult.com/wp-content/uploads/2014/11/coconut-shell-biomass.jpg?w=720&ssl=1" alt="Glass Bottles">
+        <h3>Coconut shells</h3>
+        <p>Available: 14 kg</p>
+        <p><strong>₹45</strong></p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBlXdNDthf3T5h4TUddYL9Dsua_rlOTxeIWg&s" alt="Waste Magazines">
+        <h3>Magazines</h3>
+        <p>Available: 90 kg</p>
+        <p><strong>₹553</strong></p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://content.jdmagicbox.com/comp/thoothukudi/p3/9999px461.x461.200117184234.a7p3/catalogue/roja-polymers-thoothukudi-00lc5lgz6c-250.jpg" alt="Plastic Bottles">
+        <h3>Plastic Bottles</h3>
+        <p>Available: 20 kg</p>
+        <p><strong>₹50</strong></p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2020/11/TZ/QR/YC/85792480/article-0-0d1ae85d00000578-941-1024x615-large-jpg-500x500.jpg" alt="Old Newspapers">
+        <h3>Old Newspapers</h3>
+        <p>Available: 15 kg</p>
+        <p><strong>₹35</strong></p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images-cdn.ubuy.co.in/6429123ec61cdb566f1604a3-mt-products-sturdy-kraft-corrugated.jpg" alt="Cardboard Boxes">
+        <h3>Cardboard Boxes</h3>
+        <p>Available: 18 kg</p>
+        <p><strong>₹40</strong></p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://www.niir.org/blog/wp-content/uploads/2022/08/ALU-CANS-cropped-300x239.jpg" alt="Aluminium Cans">
+        <h3>Aluminium Cans</h3>
+        <p>Available: 8 kg</p>
+        <p><strong>₹39</strong></p>
+        <button>Buy Now</button>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ReMakersHub. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
