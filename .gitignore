@@ -8,3 +8,8 @@ dist/
 build/
 .venv/
 venv/
+
+credentials.json
+service-account.json
+.deployx/
+.vercel/
